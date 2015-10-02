@@ -4,17 +4,18 @@ class Game
 
   def initialize(url)
     @url = url
+    @boxscore = GamedayUrlBuilder.generate_nokogiri_xml(url + 'boxscore.xml').xpath("//boxscore").first
   end
 
   def teams
     Hash[
-      :away, GamedayUrlBuilder.generate_nokogiri_xml(url + 'boxscore.xml').xpath("//boxscore").first["away_fname"],
-      :home, GamedayUrlBuilder.generate_nokogiri_xml(url + 'boxscore.xml').xpath("//boxscore").first["home_fname"]
+      :away, boxscore["away_fname"],
+      :home, boxscore["home_fname"]
     ]
   end
 
 private
 
-attr_reader :url
+attr_reader :url, :boxscore
 
 end
