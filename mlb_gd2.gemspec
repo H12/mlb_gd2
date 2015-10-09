@@ -1,4 +1,5 @@
 Gem::Specification.new do |s|
+  s.add_dependency 'nokogiri', '~> 1.6'
   s.name        = 'mlb_gd2'
   s.version     = '0.1.0'
   s.date        = '2015-10-05'
