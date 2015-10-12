@@ -1,4 +1,5 @@
-require_relative './gameday_helpers'
+require "net/http"
+require "nokogiri"
 
 class Game
 
