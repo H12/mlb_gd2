@@ -16,6 +16,14 @@ class Gameday
     @date = date_time.strftime("%B %-d, %Y")
   end
 
+  def game_from_team(team)
+    selected_games = games.select { |game| game.teams[:home].include?(team) || game.teams[:away].include?(team) }
 
+    if selected_games.length > 1
+      puts "That query fits more than one game. Please be more specific."
+    else
+      selected_games[0]
+    end
+  end
 
 end
