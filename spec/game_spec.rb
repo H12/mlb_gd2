@@ -1,6 +1,6 @@
 require "rspec"
 
-require_relative "../lib/game"
+require_relative "../lib/mlb_gd2/game"
 
 describe "Game" do
 

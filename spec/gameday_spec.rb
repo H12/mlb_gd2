@@ -1,6 +1,6 @@
 require "rspec"
 
-require_relative "../lib/gameday"
+require_relative "../lib/mlb_gd2/gameday"
 
 describe "Gameday" do
 

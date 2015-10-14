@@ -1,6 +1,6 @@
 require "rspec"
 
-require_relative "../lib/gameday_helpers"
+require_relative "../lib/mlb_gd2/gameday_helpers"
 
 describe "GamedayUrlBuilder" do
 
