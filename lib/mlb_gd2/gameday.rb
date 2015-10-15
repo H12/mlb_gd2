@@ -21,6 +21,8 @@ class Gameday
 
     if selected_games.length > 1
       puts "That query fits more than one game. Please be more specific."
+    elsif selected_games.empty?
+      puts "No teams match that query."
     else
       selected_games[0]
     end
