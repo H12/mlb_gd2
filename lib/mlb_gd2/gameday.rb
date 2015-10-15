@@ -12,9 +12,12 @@ class Gameday
     date_time = Time.new(year, month, day)
     base_url = build_base_url(date_time)
 
-    @games = generate_nokogiri_html(base_url).search('a[href^="gid"]').map do |link|
+    @games = []
+    generate_nokogiri_html(base_url).search('a[href^="gid"]').each do |link|
       gid = link.attributes["href"].value
-      Game.new(base_url + gid)
+      if valid_game?(base_url + gid)
+        @games << Game.new(base_url + gid)
+      end
     end
     @date = date_time.strftime("%B %-d, %Y")
   end

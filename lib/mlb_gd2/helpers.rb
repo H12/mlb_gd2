@@ -17,4 +17,8 @@ module Helpers
     Nokogiri::XML(Net::HTTP.get(URI(url)))
   end
 
+  def valid_game?(url)
+    generate_nokogiri_xml(url).xpath('//a').map { |link| link.attribute('href').value }.include? "boxscore.xml"
+  end
+
 end
