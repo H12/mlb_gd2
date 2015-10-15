@@ -1,11 +1,14 @@
 require "net/http"
 require "nokogiri"
+require_relative "./helpers"
 
 class Game
 
+  include Helpers
+
   def initialize(url)
     @url = url
-    @boxscore = GamedayUrlBuilder.generate_nokogiri_xml(url + 'boxscore.xml').xpath("//boxscore").first
+    @boxscore = generate_nokogiri_xml(url + 'boxscore.xml').xpath("//boxscore").first
   end
 
   def teams
