@@ -26,4 +26,10 @@ describe "team" do
     end
   end
 
+  describe "#hits" do
+    it "returns the total game hits of the selected team" do
+      expect(team.hits).to eq("8")
+    end
+  end
+
 end
