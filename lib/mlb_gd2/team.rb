@@ -4,7 +4,7 @@ require_relative "./helpers"
 
 class Team
 
-  attr_reader :name, :linescore, :runs, :hits
+  attr_reader :name, :linescore, :runs, :hits, :errors
 
   include Helpers
 
@@ -13,6 +13,7 @@ class Team
     @linescore = boxscore.xpath("//inning_line_score").map { |inning| inning["#{flag}"] }
     @runs = boxscore.xpath("//linescore").first.attribute("#{flag}_team_runs").value
     @hits = boxscore.xpath("//linescore").first.attribute("#{flag}_team_hits").value
+    @errors = boxscore.xpath("//linescore").first.attribute("#{flag}_team_errors").value
   end
 
 end

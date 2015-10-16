@@ -32,4 +32,10 @@ describe "team" do
     end
   end
 
+  describe "#errors" do
+    it "returns the total game errors of the selected team" do
+      expect(team.errors).to eq("1")
+    end
+  end
+
 end
