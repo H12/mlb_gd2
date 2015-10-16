@@ -4,12 +4,12 @@ require_relative "./helpers"
 
 class Team
 
-  include Helpers
-
   attr_reader :name
 
-  def initialize(boxscore, flag)
+  include Helpers
 
+  def initialize(boxscore, flag)
+    @name = boxscore.attribute("#{flag}_fname").value
   end
 
 end
