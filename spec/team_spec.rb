@@ -16,7 +16,7 @@ describe "team" do
 
   describe "#linescore" do
     it "returns the inning-by-inning linescore of the selected team" do
-      expect(team.linescore).to eq([0,4,0,0,0,1,1,0,0])
+      expect(team.linescore).to eq(["0","4","0","0","0","1","1","0","0"])
     end
   end
 

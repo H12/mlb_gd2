@@ -10,7 +10,7 @@ class Team
 
   def initialize(boxscore, flag)
     @name = boxscore.attribute("#{flag}_fname").value
-    @linescore = boxscore.xpath("//inning_line_score").map { |inning| inning["#{flag}"].to_i }
+    @linescore = boxscore.xpath("//inning_line_score").map { |inning| inning["#{flag}"] }
   end
 
 end
