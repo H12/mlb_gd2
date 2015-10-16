@@ -1,20 +1,21 @@
 require "rspec"
 
 require_relative "../lib/mlb_gd2/game"
+require_relative "../lib/mlb_gd2/team"
 
 describe "Game" do
 
-  let(:game) { Game.new("http://gd2.mlb.com/components/game/mlb/year_2015/month_09/day_30/gid_2015_09_30_chnmlb_cinmlb_1/") }
+  let(:game) { Game.new("http://gd2.mlb.com/components/game/mlb/year_2015/month_10/day_13/gid_2015_10_13_slnmlb_chnmlb_1/") }
 
-  describe "#teams" do
-    it "returns a hash containing the home and away team names" do
-      expect(game.teams).to eq({away: "Chicago Cubs", home: "Cincinnati Reds"})
+  describe "#home_team" do
+    it "returns the correct home team for the given game" do
+      expect(game.home_team.name).to eq("Chicago Cubs")
     end
   end
 
-  describe "linescores" do
-    it "returns a hash containing the home and away team line scores" do
-      expect(game.linescores).to eq({away: {inning_line_score: [0,0,2,1,1,1,0,3,2], runs: 10, hits: 16, errors: 0}, home: {inning_line_score: [1,0,0,0,0,0,0,0,2], runs: 3, hits: 4, errors: 0}})
+  describe "#away_team" do
+    it "returns the correct away team for the given game" do
+      expect(game.away_team.name).to eq("St. Louis Cardinals")
     end
   end
 
