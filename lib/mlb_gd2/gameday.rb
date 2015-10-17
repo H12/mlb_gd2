@@ -1,6 +1,7 @@
 require "net/http"
 require "nokogiri"
 require_relative "./helpers"
+require_relative "./game"
 
 class Gameday
 
