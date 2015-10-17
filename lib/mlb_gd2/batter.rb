@@ -9,7 +9,7 @@ class Batter
   include Helpers
 
   def initialize(batter_xml)
-    @name = batter_xml.attribute("name_display_first_last").value
+    @name = batter_xml.attribute("name").value
     @position = batter_xml.attribute("pos").value
   end
 
