@@ -21,9 +21,9 @@ class Batter
     @walks      = batter_xml.attribute("bb").value
     @strikeouts = batter_xml.attribute("so").value
     @avg        = batter_xml.attribute("avg").value
-    @obp        = batter_xml.attribute("obp").value
-    @slg        = batter_xml.attribute("slg").value
-    @ops        = batter_xml.attribute("ops").value
+    @obp        = batter_xml.attribute("obp") ? batter_xml.attribute("obp").value : "N/A"
+    @slg        = batter_xml.attribute("slg") ? batter_xml.attribute("slg").value : "N/A"
+    @ops        = batter_xml.attribute("ops") ? batter_xml.attribute("ops").value : "N/A"
   end
 
 end
