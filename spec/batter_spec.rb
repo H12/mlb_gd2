@@ -10,7 +10,7 @@ describe "Batter" do
 
   describe "#name" do
     it "returns a batter's full name" do
-      expect(batter.name).to eq("Dexter Fowler")
+      expect(batter.name).to eq("Fowler")
     end
   end
 
@@ -19,7 +19,5 @@ describe "Batter" do
       expect(batter.position).to eq("CF")
     end
   end
-
-
 
 end

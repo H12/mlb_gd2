@@ -10,7 +10,7 @@ describe "Pitcher" do
 
   describe "#name" do
     it "returns a pitcher's full name" do
-      expect(pitcher.name).to eq("John Lackey")
+      expect(pitcher.name).to eq("Lackey")
     end
   end
 

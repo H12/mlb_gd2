@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.add_dependency 'nokogiri', '~> 1.6'
   s.name        = 'mlb_gd2'
-  s.version     = '0.3.0'
+  s.version     = '0.3.1'
   s.date        = '2015-10-17'
   s.summary     = "MLB Gameday API Wrapper"
   s.description = "A simple wrapper for MLB's GD2 API"
