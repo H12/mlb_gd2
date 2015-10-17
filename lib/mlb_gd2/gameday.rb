@@ -23,7 +23,7 @@ class Gameday
   end
 
   def game_from_team(team)
-    selected_games = games.select { |game| game.teams[:home].include?(team) || game.teams[:away].include?(team) }
+    selected_games = games.select { |game| game.home_team.name.include?(team) || game.away_team.name.include?(team) }
 
     if selected_games.length > 1
       puts "That query fits more than one game. Please be more specific."

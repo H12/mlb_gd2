@@ -13,8 +13,11 @@ To get an array of Games for a specific day:
     require 'mlb_gd2'
     gd = Gameday.new(2011, 6, 8)
 
-To get data out of a specific game (after executing the above):
+To get a specific game given a team name:
 
-    game = gd.sample
+    game = gd.game_from_team("Cubs")
+
+To get data out of a specific game:
+
     game.teams
     game.linescores

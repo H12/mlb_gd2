@@ -20,7 +20,7 @@ describe "Gameday" do
 
   describe "#game_from_team" do
     it "returns the correct Game for the given input" do
-      expect(gameday.game_from_team("Cubs").teams[:home]).to eq("Chicago Cubs")
+      expect(gameday.game_from_team("Cubs").home_team.name).to eq("Chicago Cubs")
     end
   end
 
