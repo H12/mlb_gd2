@@ -42,6 +42,9 @@ describe "team" do
     it "returns an array of batters" do
       expect(team.batters.sample).to be_a(Batter)
     end
+    it "only includes the batters of the specified team" do
+      expect(team.batters.length).to eq(19)
+    end
   end
 
 end
