@@ -19,10 +19,4 @@ describe "Game" do
     end
   end
 
-  describe "#batters" do
-    it "returns an array of batter objects" do
-      expect(game.batters.sample).to be_a(Batter)
-    end
-  end
-
 end

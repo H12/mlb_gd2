@@ -19,10 +19,6 @@ class Game
     Team.new(boxscore, "away")
   end
 
-  def batters
-    boxscore.xpath("//batter").map { |batter_xml| Batter.new(batter_xml) }
-  end
-
 private
 
 attr_reader :url, :boxscore
