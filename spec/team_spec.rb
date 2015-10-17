@@ -47,4 +47,13 @@ describe "team" do
     end
   end
 
+  describe "#pitchers" do
+    it "returns an array of pitchers" do
+      expect(team.pitchers.sample).to be_a(Pitcher)
+    end
+    it "only includes the pitchers of the specified team" do
+      expect(team.pitchers.length).to eq(8)
+    end
+  end
+
 end

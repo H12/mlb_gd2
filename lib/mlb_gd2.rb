@@ -1,3 +1,5 @@
 require 'mlb_gd2/game'
 require 'mlb_gd2/gameday'
+require 'mlb_gd2/team'
 require 'mlb_gd2/batter'
+require 'mlb_gd2/pitcher'
