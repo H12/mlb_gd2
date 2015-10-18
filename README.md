@@ -27,4 +27,4 @@ To get batters/pitchers out of a team:
     batters = cubs.batters
     pitchers = cubs.pitchers
 
-Check out the [documentation](http://www.rubydoc.info/gems/mlb_gd2/0.3.1) for more methods and functionality.
+Check out the [documentation](http://www.rubydoc.info/gems/mlb_gd2/0.4.0) for more methods and functionality.
