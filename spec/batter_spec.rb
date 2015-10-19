@@ -20,6 +20,12 @@ describe "Batter" do
     end
   end
 
+  describe "#bat_order" do
+    it "returns a batter's position in the batting order" do
+      expect(batter.bat_order).to eq("100")
+    end
+  end
+
   describe "#at_bats" do
     it "returns a batter's at_bats" do
       expect(batter.at_bats).to eq("3")

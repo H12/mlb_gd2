@@ -4,13 +4,14 @@ require_relative "./helpers"
 
 class Batter
 
-  attr_reader :name, :position, :at_bats, :runs, :hits, :doubles, :triples, :homeruns, :rbis, :walks, :strikeouts, :avg, :obp, :slg, :ops
+  attr_reader :name, :position, :bat_order, :at_bats, :runs, :hits, :doubles, :triples, :homeruns, :rbis, :walks, :strikeouts, :avg, :obp, :slg, :ops
 
   include Helpers
 
   def initialize(batter_xml)
     @name       = batter_xml.attribute("name").value
     @position   = batter_xml.attribute("pos").value
+    @bat_order  = batter_xml.attribute("bo") ? batter_xml.attribute("bo").value : "N/A"
     @at_bats    = batter_xml.attribute("ab").value
     @runs       = batter_xml.attribute("r").value
     @hits       = batter_xml.attribute("h").value
