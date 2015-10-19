@@ -5,6 +5,8 @@ require_relative "./team"
 
 class Game
 
+  attr_reader :url
+
   include Helpers
 
   def initialize(url)
@@ -22,6 +24,6 @@ class Game
 
 private
 
-attr_reader :url, :boxscore
+attr_reader :boxscore
 
 end
