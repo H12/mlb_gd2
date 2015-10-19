@@ -84,6 +84,8 @@ class Gameday
       tid = "cha"
     elsif team.downcase.include? "yankees"
       tid = "nya"
+    else
+      tid = "invalid query"
     end
 
     selected_games = games.select { |game| game.url.include?(tid) || game.url.include?(tid) }
