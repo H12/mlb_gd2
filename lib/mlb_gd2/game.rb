@@ -5,21 +5,15 @@ require_relative "./team"
 
 class Game
 
-  attr_reader :url
+  attr_reader :url, :home_team, :away_team
 
   include Helpers
 
   def initialize(url)
     @url = url
-    @boxscore = generate_nokogiri_xml(url + 'boxscore.xml').xpath("//boxscore").first
-  end
-
-  def home_team
-    Team.new(boxscore, "home")
-  end
-
-  def away_team
-    Team.new(boxscore, "away")
+    @boxscore  = generate_nokogiri_xml(url + 'boxscore.xml').xpath("//boxscore").first
+    @home_team = Team.new(boxscore, "home")
+    @away_team = Team.new(boxscore, "away")
   end
 
 private
