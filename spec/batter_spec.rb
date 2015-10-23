@@ -110,4 +110,16 @@ describe "Batter" do
     end
   end
 
+  describe "#s_homeruns" do
+    it "returns a batter's homeruns on the entire season" do
+      expect(batter.s_homeruns).to eq("1")
+    end
+  end
+
+  describe "#s_rbis" do
+    it "returns a batter's rbis on the entire season" do
+      expect(batter.s_rbis).to eq("2")
+    end
+  end
+
 end

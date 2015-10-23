@@ -4,7 +4,7 @@ require_relative "./helpers"
 
 class Batter
 
-  attr_reader :name, :full_name, :position, :bat_order, :at_bats, :runs, :hits, :doubles, :triples, :homeruns, :rbis, :walks, :strikeouts, :avg, :obp, :slg, :ops
+  attr_reader :name, :full_name, :position, :bat_order, :at_bats, :runs, :hits, :doubles, :triples, :homeruns, :rbis, :walks, :strikeouts, :avg, :obp, :slg, :ops, :s_homeruns, :s_rbis
 
   include Helpers
 
@@ -26,6 +26,8 @@ class Batter
     @obp        = batter_xml.attribute("obp") ? batter_xml.attribute("obp").value : "N/A"
     @slg        = batter_xml.attribute("slg") ? batter_xml.attribute("slg").value : "N/A"
     @ops        = batter_xml.attribute("ops") ? batter_xml.attribute("ops").value : "N/A"
+    @s_homeruns = batter_xml.attribute("s_hr").value
+    @s_rbis     = batter_xml.attribute("s_rbi").value
   end
 
 end
