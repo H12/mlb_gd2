@@ -9,8 +9,14 @@ describe "Batter" do
   let(:batter) { Batter.new(generate_nokogiri_xml("http://gd2.mlb.com/components/game/mlb/year_2015/month_10/day_13/gid_2015_10_13_slnmlb_chnmlb_1/boxscore.xml").xpath("//batter").first) }
 
   describe "#name" do
-    it "returns a batter's full name" do
+    it "returns a batter's abbreviated name" do
       expect(batter.name).to eq("Fowler")
+    end
+  end
+
+  describe "#full_name" do
+    it "returns a batter's full name" do
+      expect(batter.full_name).to eq("Dexter Fowler")
     end
   end
 

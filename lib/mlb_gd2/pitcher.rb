@@ -4,20 +4,21 @@ require_relative "./helpers"
 
 class Pitcher
 
-  attr_reader :name, :outs, :walks, :strikeouts, :hits, :runs, :homeruns, :earned_runs, :era
+  attr_reader :name, :full_name, :outs, :walks, :strikeouts, :hits, :runs, :homeruns, :earned_runs, :era
 
   include Helpers
 
   def initialize(pitcher_xml)
-    @name = pitcher_xml.attribute("name").value
-    @outs = pitcher_xml.attribute("out").value
-    @walks = pitcher_xml.attribute("bb").value
-    @strikeouts = pitcher_xml.attribute("so").value
-    @hits = pitcher_xml.attribute("h").value
-    @runs = pitcher_xml.attribute("r").value
-    @homeruns = pitcher_xml.attribute("hr").value
+    @name        = pitcher_xml.attribute("name").value
+    @full_name  = pitcher_xml.attribute("name_display_first_last").value
+    @outs        = pitcher_xml.attribute("out").value
+    @walks       = pitcher_xml.attribute("bb").value
+    @strikeouts  = pitcher_xml.attribute("so").value
+    @hits        = pitcher_xml.attribute("h").value
+    @runs        = pitcher_xml.attribute("r").value
+    @homeruns    = pitcher_xml.attribute("hr").value
     @earned_runs = pitcher_xml.attribute("er").value
-    @era  = pitcher_xml.attribute("era").value
+    @era         = pitcher_xml.attribute("era").value
   end
 
   def ip
