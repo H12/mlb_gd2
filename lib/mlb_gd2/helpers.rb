@@ -21,4 +21,8 @@ module Helpers
     generate_nokogiri_xml(url).xpath('//a').map { |link| link.attribute('href').value }.include? "boxscore.xml"
   end
 
+  def boxscore(url)
+    generate_nokogiri_xml(url + 'boxscore.xml').xpath("//boxscore").first
+  end
+
 end
